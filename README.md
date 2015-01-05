@@ -15,7 +15,7 @@ API
 -------|---------|------
 |Db.save()||To explicitly persist the database to disk.|
 |Db(databaseName, initReadyCallback, cacheSize)|databaseName ... the name of the database as String<br />initReadyCallback ... callback on successfull initialisation of the database as function<br />cacheSize ... the number of elements to keep in cache as number|Create a database with the given values for name and cache size.|
-|Db.query|-|Contains the TAFFYdb object. Documentation to TAFFYdb can be found under http://www.taffydb.com/|
+|Db.query()|See the http://www.taffydb.com/ query object documentation for more details.|Contains the TAFFYdb object. Documentation to TAFFYdb can be found under http://www.taffydb.com/|
 
 Install
 =====
