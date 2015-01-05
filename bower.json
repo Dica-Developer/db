@@ -1,0 +1,18 @@
+{
+  "name": "dica-developer-fileutil",
+  "main": "lib_db.js",
+  "ignore": [],
+  "description": "Simple cross platform (cordova, node-webkit) TAFFYdb wrapper to extend it with the functionality to load an existing db and automatic save after changes.",
+  "keywords": ["node-webkit", "cordova", "TAFFYdb", "taffy"
+    "database"
+  ],
+  "license": "GPL-3.0+",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Dica-Developer/fileutil.git"
+  },
+  "dependencies": {
+    "taffydb": "*",
+    "dica-developer-fileutil": "~1.0.5"
+  }
+}
