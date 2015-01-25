@@ -1,4 +1,4 @@
-fileutil
+db
 ========
 
 Simple cross platform (cordova, node-webkit) TAFFYdb wrapper to extend it with the functionality to load an existing db and automatic save after changes.
