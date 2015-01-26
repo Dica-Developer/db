@@ -4,6 +4,7 @@
 
   function Db() {
     var _dbName = null;
+    var _lock = false;
     this.query = null;
 
     this.setDbName = function (dbName) {
@@ -13,11 +14,23 @@
     this.getDbName = function () {
       return _dbName;
     };
+
+    this.lock = function() {
+      _lock = true;
+    };
+
+    this.unlock = function() {
+      _lock = false;
+    };
+
+    this.isLocked = function() {
+      return _lock;
+    };
   }
 
   Db.prototype.save = function () {
     var db = this;
-    this.lock = true;
+    db.lock();
     var dbContent = this.query().get();
     var serializedDb = JSON.stringify(dbContent);
     var dbName = this.getDbName();
@@ -25,8 +38,8 @@
     window.dica.fileUtil.writeFile(
       dbName,
       serializedDb,
-      function () {
-        db.lock = false;
+      function() {
+        db.unlock();
       }
     );
   };
@@ -40,7 +53,7 @@
     this.setDbName(internalDbName);
 
     function saveOnDbChange() {
-      if (false === db.lock) {
+      if (!db.isLocked()) {
         if (null !== timeout) {
           clearTimeout(timeout);
         }
